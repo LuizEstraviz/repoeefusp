@@ -1,0 +1,11 @@
+<div id="gdrive-gallery">
+  {{ $images := .Site.Data.gdrive_images }}
+  {{ range $images.photos }}
+    <a href="{{ .url }}" data-lightbox="gdrive-gallery" data-title="{{ .caption }}">
+      <img src="{{ .thumbnail_url }}" alt="{{ .caption }}">
+    </a>
+  {{ end }}
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>

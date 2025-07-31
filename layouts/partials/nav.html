@@ -1,0 +1,17 @@
+{{ $currentPage := . -}}
+{{ range .Site.Menus.main.ByWeight }}
+  <a
+    href="{{ .URL }}"
+    {{ if eq $currentPage .Page }}class="current"{{ end }}
+    >{{ .Name }}</a
+  >
+{{ end }}
+
+<div class="language-switcher">
+{{ range .Site.Home.AllTranslations }}
+<a href="{{ .Permalink }}" title="{{ .Language.LanguageName }}"
+class="language-link">
+{{ .Language.LanguageName }}
+</a>
+{{ end }}
+</div>
